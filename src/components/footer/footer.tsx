@@ -14,9 +14,9 @@ import { Paragraph } from "../paragraph";
 import { Mail, MapPinHouse, Phone } from "lucide-react";
 
 const servicesLinks = [
-  { href: "/case-study", text: "Case Study" },
-  { href: "/music", text: "Music" },
-  { href: "/blog", text: "Blog" },
+  { href: "https://telepse.com/case-study", text: "Case Study" },
+  { href: "music.telepse.com", text: "Music" },
+  { href: "blog.telepse.com", text: "Blog" },
 ];
 
 export const Footer = () => {
@@ -30,7 +30,7 @@ export const Footer = () => {
               <Logo />
             </div>
             <Link
-              href="/about"
+              href="https://telepse.com/about"
               className="text-xl font-semibold hover:underline"
             >
               <Paragraph weight="bold">
