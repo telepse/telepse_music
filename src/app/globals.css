@@ -112,11 +112,147 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@theme {
+  --color-brand-yellow: #fee600;
+  --color-secondary-yellow: #f5b341;
+  --color-secondary-gray: #e6f0dd;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) black;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+html::selection {
+  background-color: var(--color-secondary-yellow);
+  color: black;
+}
+
+/* Hide horizontal scrollbar */
+
+.hide__scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide__scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-slide {
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out;
+}
+
+.swiper-slide-active .testimonial-slide {
+  transform: scale(1);
+}
+
+.swiper-pagination-bullets {
+  position: static !important;
+  margin-top: 1rem !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f5b341 !important;
+}
+
+.react-tel-input .form-control {
+  font-family: var(--font-league-spartan), sans-serif !important;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: black;
+}
+
+/* Single marketing image overlay */
+.smi-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: black;
+}
+
+.overlay-container:hover .smi-overlay {
+  opacity: 1;
+}
+
+.special-label {
+  display: none;
+}
+
+.yottie-widget-header-channel-properties-item-text {
+  font-size: 16px !important;
+}
+
+.yottie-widget-video-info > * {
+  font-size: 16px !important;
+}
+
+.yottie-widget-video-info-properties-item {
+  font-size: 14px !important;
+}
+
+.yottie-widget-feed-section-pagination-bullet {
+  font-size: 16px !important;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* My custom styles */
+
+  .wrapper {
+    @apply mx-auto max-w-6xl 2xl:max-w-[1400px];
+  }
+
+  .small__wrapper {
+    @apply mx-auto max-w-4xl;
+  }
+
+  .section {
+    @apply flex flex-col gap-8 px-4 py-8;
+  }
+
+  .badge {
+    @apply bg-secondary-yellow w-fit rounded-md px-6 py-3 text-lg font-semibold;
+  }
+
+  .shadow__btn {
+    @apply bg-secondary-yellow shadow-[3px_3px_0px_black] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none;
+  }
+
+  .calendly--btn {
+    @apply bg-brand-yellow h-14 cursor-pointer rounded-md px-6 py-3 text-lg font-semibold text-black transition duration-300 hover:bg-white hover:text-black;
+  }
+
+  .consult__btn {
+    @apply flex h-14 cursor-pointer items-center gap-2 rounded-md border border-black px-6 py-3 text-lg text-black after:inline-block after:h-5 after:w-5 after:bg-[url('/icons/calendar-clock.svg')] after:bg-contain after:bg-no-repeat after:align-middle hover:bg-black hover:text-white hover:after:invert;
+  }
+
+  .service--cta--btn {
+    @apply bg-secondary-yellow cursor-pointer rounded-md px-6 py-3 text-lg text-black hover:bg-black hover:text-white;
   }
 }
