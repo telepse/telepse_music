@@ -15,8 +15,8 @@ import { Mail, MapPinHouse, Phone } from "lucide-react";
 
 const servicesLinks = [
   { href: "https://telepse.com/case-study", text: "Case Study" },
-  { href: "music.telepse.com", text: "Music" },
-  { href: "blog.telepse.com", text: "Blog" },
+  { href: "https://music.telepse.com", text: "Music" },
+  { href: "https://blog.telepse.com", text: "Blog" },
 ];
 
 export const Footer = () => {
