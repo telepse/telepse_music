@@ -27,7 +27,7 @@ export const MobileMenu = () => {
   const router = useRouter();
 
   const goToTop = (path: string) => {
-    router.push(path);
+    router.push(`https://telepse.com/${path}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
