@@ -1,24 +1,35 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export const ScrollToSection = () => {
-  const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const section = searchParams.get("section");
 
   useEffect(() => {
-    if (section) {
-      const el = document.getElementById(section);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
+    if (!section) return;
 
-        // Clean up URL so only https://music.telepse.com shows
-        router.replace("/", { scroll: false });
+    let attempts = 0;
+    const maxAttempts = 40; // ~2 seconds
+    const timer = setInterval(() => {
+      attempts += 1;
+      const el = document.getElementById(section);
+
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.history.replaceState(null, "", pathname); // clean URL
+        clearInterval(timer);
+      } else if (attempts >= maxAttempts) {
+        // stop trying, but still clean URL
+        window.history.replaceState(null, "", pathname);
+        clearInterval(timer);
       }
-    }
-  }, [section, router]);
+    }, 50);
+
+    return () => clearInterval(timer);
+  }, [section, pathname]);
 
   return null;
 };
