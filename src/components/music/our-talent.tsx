@@ -6,7 +6,10 @@ import { Title } from "../title";
 
 export const OurTalent = () => {
   return (
-    <section className="section wrapper items-center justify-center">
+    <section
+      className="section wrapper items-center justify-center"
+      id="2ttee"
+    >
       <SlickTitle title="Our Talent" />
 
       <div className="mt-8 space-y-4">
