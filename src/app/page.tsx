@@ -9,7 +9,7 @@ import { MusicBanner } from "@/components/music/music-banner";
 import { TelepseTV } from "@/components/music/telepse-tv";
 import { YoutubeChannel } from "@/components/music/youtube-channel";
 import { MusicBreak } from "@/components/music/music-break";
-import { ScrollToSection } from "@/components/scroll-to-section";
+// import { ScrollToSection } from "@/components/scroll-to-section";
 
 export const metadata: Metadata = {
   title: "Music - Telepse",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function MusicPage() {
   return (
     <section className="section p-0">
-      <ScrollToSection />
+      {/* <ScrollToSection /> */}
       <MusicBanner />
 
       <OurTalent />
