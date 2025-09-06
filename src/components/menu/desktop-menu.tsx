@@ -143,7 +143,7 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
       </DropdownMenu>
 
       {/* Solutions */}
-      <DropdownMenu>
+      <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>
           <Button
             variant="ghost"
@@ -233,7 +233,7 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
       ))}
 
       {/* Company pages */}
-      <DropdownMenu>
+      <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>
           <Button
             variant="ghost"
