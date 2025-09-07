@@ -16,7 +16,6 @@ import { Button } from "../ui/button";
 import { ChevronDown } from "lucide-react";
 
 // Local imports
-import { NAV_LINKS } from "@/constants";
 import { NavLink } from "./nav-link";
 
 interface DesktopMenuProps {
@@ -28,12 +27,17 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
 
   // Helper to ensure scroll-to-top on navigation
   const goToTop = (path: string) => {
-    router.push(path);
+    router.push(`https://telepse.com${path}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <nav className={className}>
+      <NavLink
+        label="Home"
+        href="/"
+      />
+
       <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>
           <Button
@@ -47,36 +51,28 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
           {/* Content marketing */}
           <DropdownMenuSub>
             <DropdownMenuSubTrigger
-              onClick={() =>
-                goToTop("https://telepse.com/services/content-marketing")
-              }
+              onClick={() => goToTop("/services/content-marketing")}
             >
               Content marketing
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuItem
                 onClick={() =>
-                  goToTop(
-                    "https://telepse.com/services/content-marketing#brand_message"
-                  )
+                  goToTop("/services/content-marketing#brand_message")
                 }
               >
                 Brand message
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={() =>
-                  goToTop(
-                    "https://telepse.com/services/content-marketing#marketing_strategy"
-                  )
+                  goToTop("/services/content-marketing#marketing_strategy")
                 }
               >
                 Marketing strategy
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={() =>
-                  goToTop(
-                    "https://telepse.com/services/content-marketing#content_design"
-                  )
+                  goToTop("/services/content-marketing#content_design")
                 }
               >
                 Content design
@@ -86,9 +82,7 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
 
           {/* Social media marketing */}
           <DropdownMenuItem
-            onClick={() =>
-              goToTop("https://telepse.com/services/social-media-marketing")
-            }
+            onClick={() => goToTop("/services/social-media-marketing")}
           >
             Social media marketing
           </DropdownMenuItem>
@@ -96,43 +90,33 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
           {/* Digital marketing */}
           <DropdownMenuSub>
             <DropdownMenuSubTrigger
-              onClick={() =>
-                goToTop("https://telepse.com/services/digital-marketing")
-              }
+              onClick={() => goToTop("/services/digital-marketing")}
             >
               Digital marketing
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuItem
                 onClick={() =>
-                  goToTop(
-                    "https://telepse.com/services/digital-marketing#email_marketing"
-                  )
+                  goToTop("/services/digital-marketing#email_marketing")
                 }
               >
                 Email marketing
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={() =>
-                  goToTop(
-                    "https://telepse.com/services/digital-marketing#web_conversion"
-                  )
+                  goToTop("/services/digital-marketing#web_conversion")
                 }
               >
                 Web conversion
               </DropdownMenuItem>
               <DropdownMenuItem
-                onClick={() =>
-                  goToTop("https://telepse.com/services/digital-marketing#seo")
-                }
+                onClick={() => goToTop("/services/digital-marketing#seo")}
               >
                 SEO
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={() =>
-                  goToTop(
-                    "https://telepse.com/services/digital-marketing#google_ads"
-                  )
+                  goToTop("/services/digital-marketing#google_ads")
                 }
               >
                 Google ads
@@ -155,26 +139,18 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
         <DropdownMenuContent align="start">
           {/* Tech solutions */}
           <DropdownMenuSub>
-            <DropdownMenuSubTrigger
-              onClick={() => goToTop("/https://telepse.com/solutions")}
-            >
+            <DropdownMenuSubTrigger onClick={() => goToTop("/solutions")}>
               Marketing
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
-              <DropdownMenuItem
-                onClick={() => goToTop("https://telepse.com/solutions#b2b")}
-              >
+              <DropdownMenuItem onClick={() => goToTop("/solutions#b2b")}>
                 B2B marketing
               </DropdownMenuItem>
-              <DropdownMenuItem
-                onClick={() => goToTop("https://telepse.com/solutions#b2c")}
-              >
+              <DropdownMenuItem onClick={() => goToTop("/solutions#b2c")}>
                 B2C marketing
               </DropdownMenuItem>
               <DropdownMenuItem
-                onClick={() =>
-                  goToTop("https://telepse.com/solutions#online_advertising")
-                }
+                onClick={() => goToTop("/solutions#online_advertising")}
               >
                 Online advertising
               </DropdownMenuItem>
@@ -184,26 +160,20 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
           {/* Digital technology */}
           <DropdownMenuSub>
             <DropdownMenuSubTrigger
-              onClick={() =>
-                goToTop("https://telepse.com/solutions/digital-technology")
-              }
+              onClick={() => goToTop("/solutions/digital-technology")}
             >
               Tech
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuItem
-                onClick={() =>
-                  goToTop(
-                    "https://telepse.com/solutions/digital-technology#prd"
-                  )
-                }
+                onClick={() => goToTop("/solutions/digital-technology#prd")}
               >
                 Product requirements design
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={() =>
                   goToTop(
-                    "https://telepse.com/solutions/digital-technology#analytics_intelligence"
+                    "/solutions/digital-technology#analytics_intelligence"
                   )
                 }
               >
@@ -211,9 +181,7 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={() =>
-                  goToTop(
-                    "https://telepse.com/solutions/digital-technology#digital_transform"
-                  )
+                  goToTop("/solutions/digital-technology#digital_transform")
                 }
               >
                 Digital transform
@@ -223,14 +191,10 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
         </DropdownMenuContent>
       </DropdownMenu>
 
-      {/* Case study and tech page links */}
-      {NAV_LINKS.map((item, index) => (
-        <NavLink
-          key={index}
-          label={item.label}
-          href={item.href}
-        />
-      ))}
+      <NavLink
+        label="Products"
+        href="/tech"
+      />
 
       {/* Company pages */}
       <DropdownMenu modal={false}>
@@ -243,14 +207,13 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuItem
-            onClick={() => goToTop("https://telepse.com/about")}
-          >
+          <DropdownMenuItem onClick={() => goToTop("/about")}>
             About
           </DropdownMenuItem>
-          <DropdownMenuItem
-            onClick={() => goToTop("https://telepse.com/contact")}
-          >
+          <DropdownMenuItem onClick={() => goToTop("/case-study")}>
+            Case study
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => goToTop("/contact")}>
             Contact
           </DropdownMenuItem>
         </DropdownMenuContent>

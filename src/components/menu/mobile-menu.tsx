@@ -20,14 +20,13 @@ import {
 } from "../ui/accordion";
 
 // Local imports
-import { NAV_LINKS } from "@/constants";
 import { Logo } from "./logo";
 
 export const MobileMenu = () => {
   const router = useRouter();
 
   const goToTop = (path: string) => {
-    router.push(`https://telepse.com/${path}`);
+    router.push(`https://telepse.com${path}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -53,11 +52,19 @@ export const MobileMenu = () => {
           </SheetTitle>
         </SheetHeader>
 
+        <Button
+          variant="link"
+          className="w-full justify-start px-4 py-1.5 text-lg"
+          onClick={() => goToTop("/")}
+        >
+          Home
+        </Button>
+
         {/* Accordion for mobile nav */}
         <Accordion
           type="single"
           collapsible
-          className="hide__scrollbar w-full overflow-y-auto"
+          className="hide__scrollbar -mt-2 w-full overflow-y-auto"
         >
           {/* Services */}
           <Accordion
@@ -282,6 +289,13 @@ export const MobileMenu = () => {
                 <Button
                   variant="link"
                   className="p-0 text-base"
+                  onClick={() => goToTop("/case-study")}
+                >
+                  Case study
+                </Button>
+                <Button
+                  variant="link"
+                  className="p-0 text-base"
                   onClick={() => goToTop("/contact")}
                 >
                   Contact
@@ -291,18 +305,13 @@ export const MobileMenu = () => {
           </Accordion>
 
           {/* Case study and tech page links */}
-          <div className="mt-2 space-y-4">
-            {NAV_LINKS.map((item, index) => (
-              <Button
-                key={index}
-                variant="link"
-                className="w-full justify-start px-4 py-1.5 text-lg"
-                onClick={() => goToTop(item.href)}
-              >
-                {item.label}
-              </Button>
-            ))}
-          </div>
+          <Button
+            variant="link"
+            className="mt-2 w-full justify-start px-4 py-1.5 text-lg"
+            onClick={() => goToTop("/tech")}
+          >
+            Products
+          </Button>
         </Accordion>
       </SheetContent>
     </Sheet>
