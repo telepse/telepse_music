@@ -1,6 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 // Third-party imports
 import { Menu } from "lucide-react";
@@ -24,14 +25,63 @@ import { Logo } from "./logo";
 
 export const MobileMenu = () => {
   const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   const goToTop = (path: string) => {
     router.push(`https://telepse.com${path}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // Close sidebar on route change
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  // Close sidebar on hash change
+  useEffect(() => {
+    const handleHashLinkClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        target.tagName === "A" &&
+        target.getAttribute("href")?.startsWith("#")
+      ) {
+        setTimeout(() => {
+          setOpen(false);
+        }, 100);
+      }
+    };
+
+    document.addEventListener("click", handleHashLinkClick);
+    return () => document.removeEventListener("click", handleHashLinkClick);
+  }, []);
+
+  // const handleHashNavigation = (pathWithHash: string) => {
+  //   const url = new URL(pathWithHash, window.location.origin);
+
+  //   if (url.pathname === window.location.pathname) {
+  //     // ✅ same page, update hash and scroll
+  //     const hash = url.hash.replace("#", "");
+  //     if (hash) {
+  //       window.location.hash = url.hash;
+  //       const el = document.getElementById(hash);
+  //       if (el) {
+  //         el.scrollIntoView({ behavior: "smooth"});
+  //       }
+  //     }
+  //   } else {
+  //     // ✅ different page, let Next.js handle it
+  //     router.push(pathWithHash);
+  //   }
+
+  //   setOpen(false);
+  // };
+
   return (
-    <Sheet>
+    <Sheet
+      open={open}
+      onOpenChange={setOpen}
+    >
       <SheetTrigger asChild>
         <Button
           variant="ghost"
@@ -83,34 +133,43 @@ export const MobileMenu = () => {
                   collapsible
                 >
                   <AccordionItem value="content">
-                    <AccordionTrigger>Content marketing</AccordionTrigger>
+                    <AccordionTrigger>
+                      <span
+                        onClick={() => goToTop("/services/content-marketing")}
+                      >
+                        Content marketing
+                      </span>
+                    </AccordionTrigger>
                     <AccordionContent className="flex flex-col items-start gap-2 pl-4">
                       <Button
                         variant="link"
                         className="p-0 text-base"
-                        onClick={() =>
-                          goToTop("/services/content-marketing#brand_message")
-                        }
+                        onClick={() => {
+                          goToTop("/services/content-marketing#brand_message");
+                          setOpen(false);
+                        }}
                       >
                         Brand message
                       </Button>
                       <Button
                         variant="link"
                         className="p-0 text-base"
-                        onClick={() =>
+                        onClick={() => {
                           goToTop(
                             "/services/content-marketing#marketing_strategy"
-                          )
-                        }
+                          );
+                          setOpen(false);
+                        }}
                       >
                         Marketing strategy
                       </Button>
                       <Button
                         variant="link"
                         className="p-0 text-base"
-                        onClick={() =>
-                          goToTop("/services/content-marketing#content_design")
-                        }
+                        onClick={() => {
+                          goToTop("/services/content-marketing#content_design");
+                          setOpen(false);
+                        }}
                       >
                         Content design
                       </Button>
@@ -131,41 +190,53 @@ export const MobileMenu = () => {
                   collapsible
                 >
                   <AccordionItem value="digital">
-                    <AccordionTrigger>Digital marketing</AccordionTrigger>
+                    <AccordionTrigger>
+                      <span
+                        onClick={() => goToTop("/services/digital-marketing")}
+                      >
+                        Digital marketing
+                      </span>
+                    </AccordionTrigger>
                     <AccordionContent className="flex flex-col items-start gap-2 px-4">
                       <Button
                         variant="link"
                         className="p-0 text-base"
-                        onClick={() =>
-                          goToTop("/services/digital-marketing#email_marketing")
-                        }
+                        onClick={() => {
+                          goToTop(
+                            "/services/digital-marketing#email_marketing"
+                          );
+                          setOpen(false);
+                        }}
                       >
                         Email marketing
                       </Button>
                       <Button
                         variant="link"
                         className="p-0 text-base"
-                        onClick={() =>
-                          goToTop("/services/digital-marketing#web_conversion")
-                        }
+                        onClick={() => {
+                          goToTop("/services/digital-marketing#web_conversion");
+                          setOpen(false);
+                        }}
                       >
                         Web conversion
                       </Button>
                       <Button
                         variant="link"
                         className="p-0 text-base"
-                        onClick={() =>
-                          goToTop("/services/digital-marketing#seo")
-                        }
+                        onClick={() => {
+                          goToTop("/services/digital-marketing#seo");
+                          setOpen(false);
+                        }}
                       >
                         SEO
                       </Button>
                       <Button
                         variant="link"
                         className="p-0 text-base"
-                        onClick={() =>
-                          goToTop("/services/digital-marketing#google_ads")
-                        }
+                        onClick={() => {
+                          goToTop("/services/digital-marketing#google_ads");
+                          setOpen(false);
+                        }}
                       >
                         Google ads
                       </Button>
@@ -194,26 +265,39 @@ export const MobileMenu = () => {
                   collapsible
                 >
                   <AccordionItem value="marketing">
-                    <AccordionTrigger>Marketing</AccordionTrigger>
+                    <AccordionTrigger>
+                      <span onClick={() => goToTop("/solutions")}>
+                        Marketing
+                      </span>
+                    </AccordionTrigger>
                     <AccordionContent className="flex flex-col items-start gap-2 pl-4">
                       <Button
                         variant="link"
                         className="p-0 text-base"
-                        onClick={() => goToTop("/solutions#b2b")}
+                        onClick={() => {
+                          goToTop("/solutions#b2b");
+                          setOpen(false);
+                        }}
                       >
                         B2B marketing
                       </Button>
                       <Button
                         variant="link"
                         className="p-0 text-base"
-                        onClick={() => goToTop("/solutions#b2c")}
+                        onClick={() => {
+                          goToTop("/solutions#b2c");
+                          setOpen(false);
+                        }}
                       >
                         B2C marketing
                       </Button>
                       <Button
                         variant="link"
                         className="p-0 text-base"
-                        onClick={() => goToTop("/solutions#online_advertising")}
+                        onClick={() => {
+                          goToTop("/solutions#online_advertising");
+                          setOpen(false);
+                        }}
                       >
                         Online advertising
                       </Button>
@@ -227,36 +311,45 @@ export const MobileMenu = () => {
                   collapsible
                 >
                   <AccordionItem value="tech">
-                    <AccordionTrigger>Tech</AccordionTrigger>
+                    <AccordionTrigger>
+                      <span
+                        onClick={() => goToTop("/solutions/digital-technology")}
+                      >
+                        Tech
+                      </span>
+                    </AccordionTrigger>
                     <AccordionContent className="flex flex-col items-start gap-2 pl-4">
                       <Button
                         variant="link"
                         className="p-0 text-base"
-                        onClick={() =>
-                          goToTop("/solutions/digital-technology#prd")
-                        }
+                        onClick={() => {
+                          goToTop("/solutions/digital-technology#prd");
+                          setOpen(false);
+                        }}
                       >
-                        Product requirements design
+                        Product requirements
                       </Button>
                       <Button
                         variant="link"
                         className="p-0 text-base"
-                        onClick={() =>
+                        onClick={() => {
                           goToTop(
                             "/solutions/digital-technology#analytics_intelligence"
-                          )
-                        }
+                          );
+                          setOpen(false);
+                        }}
                       >
                         Analytics intelligence
                       </Button>
                       <Button
                         variant="link"
                         className="p-0 text-base"
-                        onClick={() =>
+                        onClick={() => {
                           goToTop(
                             "/solutions/digital-technology#digital_transform"
-                          )
-                        }
+                          );
+                          setOpen(false);
+                        }}
                       >
                         Digital transform
                       </Button>
@@ -267,11 +360,20 @@ export const MobileMenu = () => {
             </AccordionItem>
           </Accordion>
 
+          {/* Tech page links */}
+          <Button
+            variant="link"
+            className="mt-2 w-full justify-start px-4 py-1.5 text-lg"
+            onClick={() => goToTop("/tech")}
+          >
+            Products
+          </Button>
+
           {/* Company */}
           <Accordion
             type="single"
             collapsible
-            className="w-full space-y-2"
+            className="mt-2 w-full space-y-2"
           >
             <AccordionItem
               value="company"
@@ -303,15 +405,6 @@ export const MobileMenu = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-
-          {/* Case study and tech page links */}
-          <Button
-            variant="link"
-            className="mt-2 w-full justify-start px-4 py-1.5 text-lg"
-            onClick={() => goToTop("/tech")}
-          >
-            Products
-          </Button>
         </Accordion>
       </SheetContent>
     </Sheet>

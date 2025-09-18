@@ -7,7 +7,7 @@ import { Title } from "../title";
 
 export const MusicBreak = () => {
   return (
-    <section className="section items-center">
+    <section className="section h-88 items-center">
       <span className="badge">Telepse music</span>
 
       <Title
