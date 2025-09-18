@@ -182,8 +182,88 @@ export const About2ttee = ({
 
             {/* 7. Social */}
             {selected === "social" && (
-              <div className="flex h-full items-center justify-center gap-12">
-                {socialPlatforms.map((item, index) => (
+              <div className="flex h-full flex-wrap items-center justify-center gap-6 sm:gap-12">
+                {/* Instagram */}
+                <a
+                  href="https://instagram.com/2tteemusic"
+                  className="flex transform flex-col items-center justify-center gap-2 rounded-2xl transition duration-300 hover:scale-110"
+                >
+                  <Image
+                    src="/offer_icons/Telepse_digital_marketing_agency_lagos_nigeria_instagram.png"
+                    alt="Instagram"
+                    width={100}
+                    height={100}
+                    className="size-10 object-cover sm:size-16"
+                  />
+                  <Paragraph
+                    align="center"
+                    size="lg"
+                  >
+                    Instagram
+                  </Paragraph>
+                </a>
+
+                {/* X */}
+                <a
+                  href="https://x.com/2tteemusic"
+                  className="flex transform flex-col items-center justify-center gap-2 rounded-2xl transition duration-300 hover:scale-110"
+                >
+                  <Image
+                    src="/offer_icons/Telepse_digital_marketing_agency_lagos_nigeria_x.png"
+                    alt="X"
+                    width={100}
+                    height={100}
+                    className="size-8 object-cover sm:size-14"
+                  />
+                  <Paragraph
+                    align="center"
+                    size="lg"
+                  >
+                    X
+                  </Paragraph>
+                </a>
+
+                {/* Facebook */}
+                <a
+                  href="https://facebook.com/2tteemusic"
+                  className="flex transform flex-col items-center justify-center gap-2 rounded-2xl transition duration-300 hover:scale-110"
+                >
+                  <Image
+                    src="/offer_icons/Telepse_digital_marketing_agency_lagos_nigeria_facebook.png"
+                    alt="X"
+                    width={100}
+                    height={100}
+                    className="size-10 object-cover sm:size-16"
+                  />
+                  <Paragraph
+                    align="center"
+                    size="lg"
+                  >
+                    Facebook
+                  </Paragraph>
+                </a>
+
+                {/* Tiktok */}
+                <a
+                  href="https://tiktok.com/2ttee"
+                  className="flex transform flex-col items-center justify-center gap-2 rounded-2xl transition duration-300 hover:scale-110"
+                >
+                  <Image
+                    src="/offer_icons/Telepse_digital_marketing_agency_lagos_nigeria_tiktok.png"
+                    alt="X"
+                    width={100}
+                    height={100}
+                    className="size-10 object-cover sm:size-16"
+                  />
+                  <Paragraph
+                    align="center"
+                    size="lg"
+                  >
+                    Tiktok
+                  </Paragraph>
+                </a>
+
+                {/* {socialPlatforms.map((item, index) => (
                   <a
                     href={item.url}
                     key={index}
@@ -203,7 +283,7 @@ export const About2ttee = ({
                       {item.platform}
                     </Paragraph>
                   </a>
-                ))}
+                ))} */}
               </div>
             )}
           </div>
