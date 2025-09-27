@@ -12,15 +12,7 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
-  const isYellowPage =
-    pathname === "/" ||
-    pathname === "/tech" ||
-    pathname === "/about" ||
-    pathname === "/contact" ||
-    pathname === "/music" ||
-    pathname === "/unlock-ebook-now" ||
-    pathname.includes("services") ||
-    pathname.includes("solutions");
+  const isYellowPage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {

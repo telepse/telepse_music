@@ -35,7 +35,7 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
     <nav className={className}>
       <NavLink
         label="Home"
-        href="/"
+        href="https://telepse.com"
       />
 
       <DropdownMenu modal={false}>
@@ -193,7 +193,7 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
 
       <NavLink
         label="Products"
-        href="/tech"
+        href="https://telepse.com/tech"
       />
 
       {/* Company pages */}

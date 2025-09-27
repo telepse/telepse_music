@@ -39,7 +39,7 @@ export const Footer = () => {
               <Logo />
             </div>
             <Link
-              href="/about"
+              href="https://telepse.com/about"
               className="text-xl font-semibold hover:underline"
             >
               <Paragraph weight="bold">
@@ -189,7 +189,10 @@ export const Footer = () => {
           </div>
         </div>
 
-        <Paragraph>
+        <Paragraph
+          color="muted"
+          size={isMediumScreen ? "xs" : "sm"}
+        >
           Copyright &copy;{currentYear} Telepse Company. All rights reserved.
         </Paragraph>
       </footer>
