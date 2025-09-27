@@ -1,11 +1,11 @@
 export const NAV_LINKS = [
   {
     label: "Case Study",
-    href: "https://telepse.com/case-study",
+    href: "https://www.telepse.com/case-study",
   },
   {
     label: "Tech",
-    href: "https://telepse.com/tech",
+    href: "https://www.telepse.com/tech",
   },
 ];
 

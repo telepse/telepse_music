@@ -27,7 +27,7 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
 
   // Helper to ensure scroll-to-top on navigation
   const goToTop = (path: string) => {
-    router.push(`https://telepse.com${path}`);
+    router.push(`https://www.telepse.com${path}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -35,7 +35,7 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
     <nav className={className}>
       <NavLink
         label="Home"
-        href="https://telepse.com"
+        href="https://www.telepse.com"
       />
 
       <DropdownMenu modal={false}>
@@ -193,7 +193,7 @@ export const DesktopMenu = ({ className = "" }: DesktopMenuProps) => {
 
       <NavLink
         label="Products"
-        href="https://telepse.com/tech"
+        href="https://www.telepse.com/tech"
       />
 
       {/* Company pages */}

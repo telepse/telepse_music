@@ -37,7 +37,7 @@ export default function NotFound() {
         </Title>
 
         <div className="flex gap-4">
-          <Link href="https://telepse.com">
+          <Link href="https://www.telepse.com">
             <Button
               variant="default"
               size="xl"
@@ -45,7 +45,7 @@ export default function NotFound() {
               Go home
             </Button>
           </Link>
-          <Link href="https://telepse.com/contact">
+          <Link href="https://www.telepse.com/contact">
             <Button
               variant="gray"
               size="xl"

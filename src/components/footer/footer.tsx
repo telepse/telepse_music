@@ -17,7 +17,7 @@ import { SocialIcon } from "../social-icon";
 import { Paragraph } from "../paragraph";
 
 const servicesLinks = [
-  { href: "https://telepse.com/case-study", text: "Case Study" },
+  { href: "https://www.telepse.com/case-study", text: "Case Study" },
   { href: "https://music.telepse.com", text: "Music" },
   { href: "https://blog.telepse.com", text: "Blog" },
 ];
@@ -39,7 +39,7 @@ export const Footer = () => {
               <Logo />
             </div>
             <Link
-              href="https://telepse.com/about"
+              href="https://www.telepse.com/about"
               className="text-xl font-semibold hover:underline"
             >
               <Paragraph weight="bold">

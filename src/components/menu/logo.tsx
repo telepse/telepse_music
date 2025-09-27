@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Logo = () => {
   return (
-    <Link href="https://telepse.com">
+    <Link href="https://www.telepse.com">
       <Image
         src="/Telepse_digital_marketing_agency_lagos_nigeria_logo.png"
         alt="Telepse logo"
