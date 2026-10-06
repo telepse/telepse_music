@@ -428,7 +428,7 @@ export const PRODUCTS = [
       "/product_images/Telepse_digital_marketing_agency_lagos_nigeria_product_getsyynd_banner.jpg",
     logo: "/product_images/Telepse_digital_marketing_agency_lagos_nigeria_tech_product_getsyynd_talent_marketplace_ai_africa_logo.png",
     desc: "<p>A web based marketplace connecting African creative talents to global investors.</p> <p>Talents maintain a reputable profile with their projects and list deals for money making.</p> <p>Investors book talents based on deals they are interested in. Talents engage with one another through the Get Syynd forum and explore a list of talent resources on the platform.</p>",
-    href: "http://getsyynd.io",
+    href: "https://getsyynd.com",
     hasArrow: true,
   },
   {
@@ -437,25 +437,25 @@ export const PRODUCTS = [
       "/product_images/Telepse_digital_marketing_agency_lagos_nigeria_product_tipmanna_banner.jpg",
     logo: "/product_images/Telepse_digital_marketing_agency_lagos_nigeria_tipmanna_uk_startup_fundraising_events_tip.png",
     desc: "A web-app that enables performers and event organisers to request and receive tips at physical events. Tipmanna is a UK fintech startup.",
-    href: "http://tipmanna.live",
+    href: "https://tipmanna.tv",
     hasArrow: true,
   },
-  {
-    name: "Paymanna",
-    image:
-      "/product_images/Telepse_digital_marketing_agency_lagos_nigeria_product_paymanna_banner.jpg",
-    logo: "/product_images/Telepse_digital_marketing_agency_lagos_nigeria_paymanna_techproduct_logo.jpg",
-    desc: "A payment device enabled by NFC technology for collection of payments for merchants and agents.",
-    hasArrow: false,
-  },
-  {
-    name: "Moniemanna",
-    image:
-      "/product_images/Telepse_digital_marketing_agency_lagos_nigeria_product_moniemanna_banner.jpg",
-    logo: "/product_images/Telepse_digital_marketing_agency_lagos_nigeria_moniemanna_telepse product_.png",
-    desc: "A digital payment solution designed for businesses and individuals.",
-    hasArrow: false,
-  },
+  // {
+  //   name: "Paymanna",
+  //   image:
+  //     "/product_images/Telepse_digital_marketing_agency_lagos_nigeria_product_paymanna_banner.jpg",
+  //   logo: "/product_images/Telepse_digital_marketing_agency_lagos_nigeria_paymanna_techproduct_logo.jpg",
+  //   desc: "A payment device enabled by NFC technology for collection of payments for merchants and agents.",
+  //   hasArrow: false,
+  // },
+  // {
+  //   name: "Moniemanna",
+  //   image:
+  //     "/product_images/Telepse_digital_marketing_agency_lagos_nigeria_product_moniemanna_banner.jpg",
+  //   logo: "/product_images/Telepse_digital_marketing_agency_lagos_nigeria_moniemanna_telepse product_.png",
+  //   desc: "A digital payment solution designed for businesses and individuals.",
+  //   hasArrow: false,
+  // },
 ];
 
 export const contentMarketingIcons = [

@@ -6,8 +6,6 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 
 // Components imports
-import { Navbar } from "@/components/menu/navbar";
-import { Footer } from "@/components/footer/footer";
 import { Analytics } from "@/components/analytics";
 
 const leagueSpartan = League_Spartan({
@@ -31,9 +29,7 @@ export default function RootLayout({
         <Toaster position="top-center" />
         <Analytics />
 
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
